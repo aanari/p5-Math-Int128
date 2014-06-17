@@ -1,0 +1,8 @@
+MYMETA.*
+*.o
+blib/
+Makefile
+Makefile.old
+pm_to_blib
+*.bs
+*.tar.gz

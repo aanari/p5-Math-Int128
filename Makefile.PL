@@ -37,9 +37,8 @@ if (($cc_version =~ /^GNU\s+C\s+\([^)]*\)\s+version\s+(4\.(\d+)\S*)/im or
         $2 >= 4) {
     print "GNU C compiler version $1 found, good!\n";
 }
-elsif ($cc_version =~ /\bclang\s+version\s+(3.(\d+)\S*)/im and
-       $2 >= 2) {
-    print "Clang compiler version $1 found, good!\n";
+elsif ($cc_version =~ /\b(clang|llvm)\s+version\s+([345].(\d+)\S*)/im) {
+    print "Clang compiler version $2.$3 found, good!\n";
 }
 else {
     unlink $mm->{MAKEFILE};
